@@ -1,0 +1,25 @@
+if env == 'development'
+	link(rel="stylesheet", href="/app/components/loginform-style.css")
+
+.container
+	.row
+		button.btn.btn-primary.pull-right(ng-click="signup()", ng-disabled="signupform.$invalid") Sign Up
+	.row
+		.col-md-4
+		.well.col-md-4
+			img.img-responsive.center-block(src="/app/components/images/logo.jpg")
+			form.form-horizontal(name="signupForm")
+				fieldset
+					legend
+					.form-group
+						//- label.col-md-3.control-label(for="email") Email
+						.col-md-12
+							input.form-control(name="email", type="email", placeholder="email", ng-model="email", required)
+					.form-group
+						//- label.col-md-3.control-label(for="password") Password
+						.col-md-12
+							input.form-control(name="password", type="password", placeholder="password", ng-model="password", required)
+					.form-group
+						.col-md-12
+								button.btn.btn-primary.btn-lg.btn-block(ng-click="signup()", ng-disabled="signupform.$invalid") Log In
+		.col-md-4
